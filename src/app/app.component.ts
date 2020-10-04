@@ -1,3 +1,7 @@
+import {
+  IncrementarAction,
+  DecrementarAction,
+} from './contador/contador.actions';
 import { Component } from '@angular/core';
 import { Store, Action } from '@ngrx/store';
 
@@ -24,18 +28,14 @@ export class AppComponent {
 
   incrementar() {
     // this.contador++;
-    const action: Action = {
-      type: 'INCREMENTAR',
-    };
+    const action = new IncrementarAction();
 
     this.store.dispatch(action);
   }
 
   decrementar() {
     // this.contador--;
-    const action: Action = {
-      type: 'DECREMENTAR',
-    };
+    const action = new DecrementarAction();
 
     this.store.dispatch(action);
   }
